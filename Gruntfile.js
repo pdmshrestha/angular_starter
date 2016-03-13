@@ -38,7 +38,7 @@ module.exports = function (grunt) {
 			},
 			build: {
 				src: 'app/<%= pkg.name %>.js',
-				dest: 'dest/app/<%= pkg.name %>.js'
+				dest: 'dist/app/<%= pkg.name %>.js'
 			}
 		},
 
@@ -68,7 +68,7 @@ module.exports = function (grunt) {
 				      	'app/templates/**',
 				      	'app/index.html'
 			      	], 
-			      	dest: 'dest/'
+			      	dest: 'dist/'
 			    },  
 			    ],
 			},

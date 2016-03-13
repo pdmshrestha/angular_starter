@@ -6,7 +6,7 @@
 
 	var app = angular.module("angular_starter", ["ngRoute"]);
 
-	app.config(function($routeProvider){
+	app.config(['$routeProvider', function($routeProvider){
 		$routeProvider
 		.when("/main" , {
 			templateUrl: "templates/Main.html",
@@ -24,7 +24,7 @@
 			redirectTo: "/main"
 		});
 
-	});
+	}]);
 
 
 }());
@@ -45,6 +45,7 @@
 				});
 
 	};
+	DelayTestCtrl.$inject = ['$scope', '$http'];
 
 	app.controller("DelayTestCtrl", DelayTestCtrl);
 	
@@ -82,6 +83,7 @@
 		startCountdown();
 
 	};
+	MainCtrl.$inject = ['$scope', '$interval', '$location'];
 
 	app.controller("MainCtrl", MainCtrl);
 
@@ -112,6 +114,7 @@
 		GithubSvc.getUser($scope.username).then(onUserComplete, onError);
 
 	};
+	UserCtrl.$inject = ['$scope', 'GithubSvc', '$routeParams'];
 
 	app.controller("UserCtrl", UserCtrl);
 
@@ -158,6 +161,7 @@
 			getRepoDetails: getRepoDetails
 		};
 	};
+	GithubSvc.$inject = ['$http'];
 
 	var module = angular.module("angular_starter");
 	
