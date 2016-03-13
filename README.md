@@ -1,5 +1,5 @@
 # Angular Starter with Grunt #
-Angular starter project setup
+Angular starter project setup with Grunt (A alternative to RequireJS)
 
 ### Components needed ###
 * node.js
@@ -10,7 +10,7 @@ Angular starter project setup
 * grunt (sudo npm install -g grunt-clli)
 
 ### Preparing grunt ###
-* (navigate to <project folder>)
+* (navigate to [project folder])
 * sudo npm install (it will install grunt packages locally)
 * sudo chmod +x start.sh (for first time)
 * ./start.sh (it will concat files and watch files change)
