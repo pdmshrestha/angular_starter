@@ -1,0 +1,17 @@
+<a href="" ng-click="logout()">Logout</a>
+<br>
+<a href="#/account">Account</a>
+
+<div ng-show="!users">
+	<img src="res/ajax-loader.gif" />
+</div>
+
+<div ng-show="users">
+	
+	<h2>List of users</h2>
+	<ul>
+		<li ng-repeat="user in users">
+			{{ user.fullname }}
+		</li>
+	</ul>	
+</div>

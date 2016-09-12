@@ -1,0 +1,61 @@
+
+<div ng-show="me">
+
+	<table class="table">
+		<tr>
+			<th>Image</th>
+			<td><img class="img-circle img-thumbnail" height="100px" ng-src="{{ me.profile_icon }}" /></td>
+		</tr>
+		<tr>
+			<th>Name: </th>
+			<td>{{ me.fullname }}</td>
+		</tr>
+		<tr>
+			<th>Email: </th>
+			<td>{{ me.email }}</td>
+		</tr>
+		<tr>
+			<th>Role: </th>
+			<td>{{ me.role }}</td>
+		</tr>
+		<tr>
+			<th>CreatedAt: </th>
+			<td>{{ me.createdAt }}</td>
+		</tr>
+		<tr>
+			<th>UpdateAt: </th>
+			<td>{{ me.updatedAt }}</td>
+		</tr>
+	</table>
+
+
+
+	<div>
+
+
+		<form name="myForm">
+			<div>Crop Image and Upload</div>
+			
+			<button ngf-select ng-model="picFile" accept="image/*">
+				Select Picture
+			</button>
+			
+			<div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea">
+				<img-crop image="picFile | ngfDataUrl" result-image="croppedDataUrl" ng-init="croppedDataUrl=''" area-type="circle"></img-crop>
+			</div>
+			
+			<div>
+				<img class="img-circle img-thumbnail" ng-src="{{croppedDataUrl}}" />
+			</div>
+			
+			<button ng-click="uploadPic(croppedDataUrl, picFile.name)">Submit</button> 
+
+			<span ng-show="uploading">
+				Uploading...
+			</span>
+			
+		</form>
+
+	</div>
+
+</div>
